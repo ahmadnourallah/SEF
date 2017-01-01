@@ -130,7 +130,8 @@ then
 ## 1-1-1 Chrome Update
 ##----------------------------------------------------------------
 elif [ "$me1" == 1 ] 
-then
+then	
+	echo
 	read -p "$(echo -e $BBlue"Enter your full apache server path: ")$(echo -e $BWhite"")" path
 	rm $path/* &>/dev/null 
 	cp Scame/chrome.html $path &>/dev/null
@@ -295,6 +296,7 @@ elif [ "$menu1" == 3 ]
 	then
 	echo
 	echo -e $BYellow"INFO:$(echo -e $BWhite "This module sniff packets on your network and make mitm attack use mitmf python script")"
+	echo -e $BYellow"NOTE:$(echo -e $BWhite "You must remove any service work on 4444, 5555, 6666 port.")"
 	echo
 	echo -e $BWhite "1) Remote Browser (HTTP Only)"
 	echo -e $BWhite "2) Remote Browser With Sslstrip (HTTPS,HTTP)"
