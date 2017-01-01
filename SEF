@@ -168,47 +168,47 @@ echo
 	read -p "$(echo -e $BBlue"Enter your Terminal name (kde,gnome,lxde,xfce): ")$(echo -e $BWhite"")" terminal
 	if [ "$terminal" == "gnome" ]
 		then	
-		gnome-terminal -x tools/msfrc/Listner1
-		gnome-terminal -x tools/msfrc/Listner2
+		gnome-terminal -x tools/scripts/Listner1
+		gnome-terminal -x tools/scripts/Listner2
 		if [ "$tybe" == "x86" ]
 			then
-		gnome-terminal -x tools/msfrc/Listner3
+		gnome-terminal -x tools/scripts/Listner3
 		elif [ "$tybe" == "x64" ]
 			then
-		gnome-terminal -x tools/msfrc/Listner4
+		gnome-terminal -x tools/scripts/Listner4
 		fi
 	elif [ "$terminal" == "kde" ]
 		then
-		kde-terminal -x tools/msfrc/Listner1
-		kde-terminal -x tools/msfrc/Listner2
+		kde-terminal -x tools/scripts/Listner1
+		kde-terminal -x tools/scripts/Listner2
 		if [ "$tybe" == "x86" ]
 			then
-		kde-terminal -x tools/msfrc/Listner3
+		kde-terminal -x tools/scripts/Listner3
 		elif [ "$tybe" == "x64" ]
 			then
-		kde-terminal -x tools/msfrc/Listner4
+		kde-terminal -x tools/scripts/Listner4
 		fi
 	elif [ "$terminal" == "lxde" ]
 		then
-		lxde-terminal -x tools/msfrc/Listner1
-		lxde-terminal -x tools/msfrc/Listner2
+		lxde-terminal -x tools/scripts/Listner1
+		lxde-terminal -x tools/scripts/Listner2
 		if [ "$tybe" == "x86" ]
 			then
-		lxde-terminal -x tools/msfrc/Listner3
+		lxde-terminal -x tools/scripts/Listner3
 		elif [ "$tybe" == "x64" ]
 			then
-		lxde-terminal -x tools/msfrc/Listner4
+		lxde-terminal -x tools/scripts/Listner4
 		fi
 	elif [ "$terminal" == "xfce" ]
 		then
-		xfce-terminal -x tools/msfrc/Listner1
-		xfce-terminal -x tools/msfrc/Listner2
+		xfce-terminal -x tools/scripts/Listner1
+		xfce-terminal -x tools/scripts/Listner2
 		if [ "$tybe" == "x86" ]
 			then
-		xfce-terminal -x tools/msfrc/Listner3
+		xfce-terminal -x tools/scripts/Listner3
 		elif [ "$tybe" == "x64" ]
 			then
-		xfce-terminal -x tools/msfrc/Listner4
+		xfce-terminal -x tools/scripts/Listner4
 		fi
 	else 
 		echo
