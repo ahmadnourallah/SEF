@@ -725,8 +725,9 @@ then
 ##----------------------------------------------------------------------------
 elif [ "$blue" == "1" ]
 then	
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter your bluetooth interface: ")$(echo -e $BWhite )" inter
 	echo -e $BWhite
-	hcitool scan
+	hcitool -i $inter scan
 	echo
 opr=$?
 	if [ "$opr" == 0 ]	
