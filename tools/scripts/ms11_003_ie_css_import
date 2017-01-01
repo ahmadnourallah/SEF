@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Wait will open metasploit ...."
+echo
+cd tools/msfrc
+msfconsole -r ms11_003_ie_css_import.rc
+

