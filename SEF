@@ -222,7 +222,7 @@ echo
 	pre=$?
 	if [ "$pre" == 0 ]
 		then
-		
+		echo ""
 	else
 		echo "Sorry somethings was wrong ..."
 		echo
