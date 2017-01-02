@@ -23,7 +23,14 @@ git clone https://github.com/ahmadnourallah/SEF.git
 6- Bluetooth toolkit (scan deivce on your area, scan bluetooth service in specific device, evil twin attack on specific bluetooth, attack on specific service in device).<br>
 7- Android toolkit (get android shell, android app databases decoder, download file from device).<br>
 8- Hack android passowrd(pattern, pin, password).<br>
+# Call US
+####Ahmad Nourallah:
+Email: ahmadnurallah@gmail.com
+Facebook: fb.com/ahmadnurallah
+####Dante Nourallah:
+Facebook: fb.com/dante.nourllah<br><br>
 
+For More Information visit our wiki page ==> [Wiki](https://github.com/ahmadnourallah/SEF/wiki)
 
 
 
