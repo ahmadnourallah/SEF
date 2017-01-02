@@ -1031,7 +1031,7 @@ echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 3 Sms Messages
+## 2 Sms Messages
 #----------------------------------
 elif [ "$decod" == 2 ]
 then
@@ -1045,7 +1045,7 @@ echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 4 Android Default Browser Passwords
+## 3 Android Default Browser Passwords
 #----------------------------------
 elif [ "$decod" == 3 ]
 then
@@ -1059,7 +1059,7 @@ echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 5 Android Default Browser Histroy
+## 4 Android Default Browser Histroy
 #----------------------------------
 elif [ "$decod" == 4 ]
 then
@@ -1074,7 +1074,7 @@ echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 6 Facebook Messenger Messages
+## 5 Facebook Messenger Messages
 #----------------------------------
 elif [ "$decod" == 5 ]
 then
@@ -1088,7 +1088,7 @@ echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 7 WhatsApp Messages
+## 6 WhatsApp Messages
 #----------------------------------
 elif [ "$decod" == 6 ]
 then
@@ -1096,13 +1096,13 @@ read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$
 ./tools/android/adb -s $se shell su root cp /data/data/com.whatsapp/databases/msgstore.db /sdcard
 ./tools/android/adb -s $se pull /sdcard/msgstore.db /root/.SEF
 ./tools/android/adb -s $se shell rm /sdcard/msgstore.db
-./tools/android/sqlite/sqlite3 /root/msgstore.db
+sqlitebrowser /root/msgstore.db
 rm /root/.SEF/msgstore.db
 echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 8 Viber Messages
+## 7 Viber Messages
 #----------------------------------
 elif [ "$decod" == 7 ]
 then
@@ -1116,7 +1116,7 @@ echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 9 Google Chrome History
+## 8 Google Chrome History
 #----------------------------------
 elif [ "$decod" == 8 ]
 then
@@ -1130,7 +1130,7 @@ echo
 	read -n1 -r -p "$(echo -e $BGreen"Press enter to continue...")" key
 	clear
 #----------------------------------
-## 10 Google Chrome Password
+## 9 Google Chrome Password
 #----------------------------------
 elif [ "$decod" == 9 ]
 then
