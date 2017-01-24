@@ -13,7 +13,8 @@ git clone https://github.com/ahmadnourallah/SEF.git
 [1) Metasploit Framework](https://github.com/rapid7/metasploit-framework)<br>
 [2) Sqlbrowser](https://github.com/sqlitebrowser/sqlitebrowser)<br>
 [3) Ettercap](https://github.com/Ettercap/ettercap)<br><br>
-4- After install the requirements execute the tools and enjoy. 
+4- After install the requirements execute the install file and wait to finish.<br><br>
+5- Finally, type in the terminal seframework to run the tools.
 # Features
 1- Make fake download scame.<br>
 2- Mass Mailer Attack (Send fake email use real gmail account).<br>
