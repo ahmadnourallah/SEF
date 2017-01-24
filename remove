@@ -1,0 +1,87 @@
+#!/bin/bash
+Black='\e[0;30m'        # Black
+Red='\e[0;31m'          # Red
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
+
+# Bold
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
+echo
+echo -e $BYellow "                      ------------------------------"
+echo -e $BYellow "                      |Social Engineering Framework|"         
+echo -e $BYellow "                      ------------------------------"
+echo -e $BBlue "                |++++| Created by: $(echo -e $BYellow"Ahmad Nourallah") $(echo -e $BBlue"|++++|")"
+echo -e $BBlue "                |++++|         Verison: $(echo -e $BYellow"1.0") $(echo -e $BBlue"       |++++|")"
+echo -e $BBlue "                |++++|         Date create: $(echo -e $BYellow"17/1/1") $(echo -e $BBlue"|++++|")"
+echo -e $BBlue "                |++++|       Download Page:        |++++|" 
+echo -e $BBlue "           |++++|$(echo -e $BYellow" https://github.com/ahmadnourallah/SEF")$(echo -e $BBlue" |++++|")"
+echo
+echo -e $BYellow "Note: $(echo -e $BWhite"You shouldnt remove any file from tools after install finish.")"
+echo -e $BYellow "Note: $(echo -e $BWhite"You should run the install plugin from the tools directory.")"
+echo -e $BYellow "                                       Note: $(echo -e $BWhite"the tools need root permissions.")"
+echo
+echo "$(echo -e $BBlue"SEF> " )$(echo -e $BWhite"Welcome to SEF remove plugin")" 
+read -p "$(echo -e $BBlue"SEF> " )$(echo -e $BWhite"Are you accept remove tools on your computer [Y|N]:") " accept 
+if [ "$accept" == "Y" ] || [ "$accept" == "y" ] || [ "$accept" == "yes" ] || [ "$accept" == "Yes" ]
+then
+if [ "$EUID" == 0 ]
+then
+echo
+echo -e $BWhite"[$(echo -e $BYellow"ok")$(echo -e $BWhite"] Get root permissions")"
+else
+echo
+echo -e $BWhite"[$(echo -e $BRed"error")$(echo -e $BWhite"] Get root permissions")"
+echo
+exit
+fi
+rm -r /etc/SEF/ &> /dev/null
+if [ "$?" == 0 ]
+then
+echo -e $BWhite"[$(echo -e $BYellow"ok")$(echo -e $BWhite"] Remove tools folder from /etc/SEF/")"
+else
+echo -e $BWhite"[$(echo -e $BRed"error")$(echo -e $BWhite"] Remove tools folder from /etc/SEF/")"
+fi
+sleep 0.2s
+rm -r /root/.SEF/ &> /dev/null
+if [ "$?" == 0 ]
+then
+echo -e $BWhite"[$(echo -e $BYellow"ok")$(echo -e $BWhite"] Remove configure folder from /root/.SEF/")"
+else
+echo -e $BWhite"[$(echo -e $BRed"error")$(echo -e $BWhite"] Remove configure folder from /root/.SEF/")"
+fi
+sleep 0.2s
+rm -r /bin/seframework /bin/adb &> /dev/null
+if [ "$?" == 0 ]
+then
+echo -e $BWhite"[$(echo -e $BYellow"ok")$(echo -e $BWhite"] Remove tools script from /bin/seframework/")"
+else
+echo -e $BWhite"[$(echo -e $BRed"error")$(echo -e $BWhite"] Remove tools script from /bin/seframework/")"
+echo
+fi
+
+else
+echo
+echo -e $BRed "Good bye $(echo -e $BWhite ".......")"
+echo	
+fi
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,4 @@
 #!/bin/bash
 echo "Wait will open metasploit ...."
 echo
-cd tools/msfrc
-msfconsole -r Listening4.rc
+msfconsole -r /etc/Desktop/SEF/tools/msfrc/Listner4Listening4.rc

