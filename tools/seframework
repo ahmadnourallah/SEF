@@ -55,7 +55,7 @@ echo -e $BYellow "                      |Social Engineering Framework|"
 echo -e $BYellow "                      ------------------------------"
 echo -e $BBlue "                |++++| Created by: $(echo -e $BYellow"Ahmad Nourallah") $(echo -e $BBlue"|++++|")"
 echo -e $BBlue "                |++++|         Verison: $(echo -e $BYellow"1.0") $(echo -e $BBlue"       |++++|")"
-echo -e $BBlue "                |++++|         Date create: $(echo -e $BYellow"17/1/1") $(echo -e $BBlue"|++++|")"
+echo -e $BBlue "                |++++|         Date create: $(echo -e $BYellow"17/2/1") $(echo -e $BBlue"|++++|")"
 echo -e $BBlue "                |++++|       Download Page:        |++++|" 
 echo -e $BBlue "           |++++|$(echo -e $BYellow" https://github.com/ahmadnourallah/SEF")$(echo -e $BBlue" |++++|")"
 else
