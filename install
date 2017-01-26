@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 Black='\e[0;30m'        # Black
 Red='\e[0;31m'          # Red
 Green='\e[0;32m'        # Green
