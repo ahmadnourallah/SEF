@@ -27,8 +27,8 @@ echo -e $BBlue "                |++++|         Date create: $(echo -e $BYellow"1
 echo -e $BBlue "                |++++|       Download Page:        |++++|" 
 echo -e $BBlue "           |++++|$(echo -e $BYellow" https://github.com/ahmadnourallah/SEF")$(echo -e $BBlue" |++++|")"
 echo
-echo -e $BYellow "Note: $(echo -e $BWhite"You shouldnt remove any file from tools after install finish.")"
-echo -e $BYellow "Note: $(echo -e $BWhite"You should run the install plugin from the tools directory.")"
+echo -e $BYellow "Note: $(echo -e $BWhite"You shouldnt remove any file from tools after remove finish.")"
+echo -e $BYellow "Note: $(echo -e $BWhite"You should run the remove plugin from the tools directory.")"
 echo -e $BYellow "                                       Note: $(echo -e $BWhite"the tools need root permissions.")"
 echo
 echo "$(echo -e $BBlue"SEF> " )$(echo -e $BWhite"Welcome to SEF remove plugin")" 
