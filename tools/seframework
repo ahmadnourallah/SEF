@@ -1625,7 +1625,7 @@ fi
 #-----------------------------------------------------------------------------
 ## 4-7 Android Password Cracker
 ##----------------------------------------------------------------------------
-elif [ "$android" == 7 ]
+elif [ "$android" == 8 ]
 then
 echo
 read -p "$(echo -e $BBlue"SEF> ")$(echo -e $BYellow"Enter The Device Serial: ")$(echo -e $BWhite )" se
