@@ -94,7 +94,7 @@ echo -e $BWhite"[$(echo -e $BRed"error")$(echo -e $BWhite"] Copy adb to /bin/")"
 fi
 sleep 0.2s
 cd ..
-rm -r SEF/
+rm -r SEF*/
 if [ "$?" == 0 ]
 then
 echo -e $BWhite"[$(echo -e $BYellow"ok")$(echo -e $BWhite"] Remove install file from computer")"
