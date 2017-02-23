@@ -64,9 +64,9 @@ sleep 0.2s
 rm -r /bin/seframework /bin/adb &> /dev/null
 if [ "$?" == 0 ]
 then
-echo -e $BWhite"[$(echo -e $BYellow"ok")$(echo -e $BWhite"] Remove tools script from /bin/seframework/")"
+echo -e $BWhite"[$(echo -e $BYellow"ok")$(echo -e $BWhite"] Remove tools script from /bin/")"
 else
-echo -e $BWhite"[$(echo -e $BRed"error")$(echo -e $BWhite"] Remove tools script from /bin/seframework/")"
+echo -e $BWhite"[$(echo -e $BRed"error")$(echo -e $BWhite"] Remove tools script from /bin/")"
 echo
 fi
 
